@@ -9,7 +9,7 @@
 require('../routeros_api.class.php');
 $API = new RouterosAPI();
 
-if ($API->connect('111.111.111.111', 'LOGIN', 'PASSWORD')) {
+if ($API->connect('111.111.111.111', '8728', 'LOGIN', 'PASSWORD')) {
    # Get all current hosts
    $API->write('/ip/dns/static/print');
    $ips = $API->read();

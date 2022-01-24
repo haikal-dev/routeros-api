@@ -6,7 +6,7 @@ $API = new RouterosAPI();
 
 $API->debug = true;
 
-if ($API->connect('111.111.111.111', 'LOGIN', 'PASSWORD')) {
+if ($API->connect('111.111.111.111', '8728', 'LOGIN', 'PASSWORD')) {
 
    $API->write('/interface/getall');
 
