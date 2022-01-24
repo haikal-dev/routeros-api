@@ -35,5 +35,9 @@ class RouterMgmt
         return $this->api->disconnect();
     }
 
+    public function show_debug($data){
+        echo "<pre>";
+        print_r($data);
+    }
     
 } 
