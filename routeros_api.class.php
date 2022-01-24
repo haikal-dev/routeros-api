@@ -92,10 +92,11 @@ class RouterosAPI
      *
      * @return boolean                If we are connected or not
      */
-    public function connect($ip, $login, $password)
+    public function connect($ip, $port, $login, $password)
     {
         for ($ATTEMPT = 1; $ATTEMPT <= $this->attempts; $ATTEMPT++) {
             $this->connected = false;
+            $this->port = $port;
             $PROTOCOL = ($this->ssl ? 'ssl://' : '' );
             $context = stream_context_create(array('ssl' => array('ciphers' => 'ADH:ALL', 'verify_peer' => false, 'verify_peer_name' => false)));
             $this->debug('Connection attempt #' . $ATTEMPT . ' to ' . $PROTOCOL . $ip . ':' . $this->port . '...');
