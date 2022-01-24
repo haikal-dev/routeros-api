@@ -1,5 +1,18 @@
 <?php
 
+/*****************************
+ *
+ * Router Management System
+ * Author: Haikal Azizan
+ * Contributors:
+ *  - 
+ *  -  
+ *
+ * http://www.mikrotik.com
+ * http://wiki.mikrotik.com/wiki/API_PHP_class
+ *
+ ******************************/
+
 class RouterMgmt
 {
     protected $api;
