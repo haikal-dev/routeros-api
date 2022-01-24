@@ -16,6 +16,7 @@
 class RouterMgmt
 {
     protected $api;
+    protected $credFile = 'credentials.php'; // edit this to your credentials file path
 
     public function __construct($debug = false){
         require_once "routeros_api.class.php";
@@ -25,7 +26,7 @@ class RouterMgmt
     }
 
     public function connect(){
-        require_once "credentials.php";
+        require_once $this->credFile;
         $cred = new Credential;
         return $this->api->connect($cred->ip, $cred->port, $cred->username, $cred->password);
     }
