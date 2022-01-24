@@ -44,5 +44,15 @@ class RouterMgmt
         $data = $this->api->comm("/ip/dhcp-server/lease/print");
         return $data;
     }
+
+    public function add_ip($ip, $netaddr, $interface){
+        $data = $this->api->comm("/ip/address/add", [
+            "address" => $ip,
+            "network" => $netaddr,
+            "interface" => $interface
+        ]);
+        
+        return $data;
+    }
     
 } 
