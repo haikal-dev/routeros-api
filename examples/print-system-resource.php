@@ -13,7 +13,7 @@ $router = new RouterMgmt(false);
 // If connection possible, perform next action.
 if($router->connect()){
 
-    // Get DHCP Client
+    // Get Router System Resource
     $data = $router->show_resource();
 
     // Show data received from router
