@@ -9,14 +9,14 @@ $router = new RouterMgmt(false);
 // If connection possible, perform next action.
 if($router->connect()){
 
-    $ip         = "192.168.100.1/24";
-    $subnet     = "192.168.100.0";
-    $interface  = "ether10";
+    $ip                 = "192.168.100.1/24";
+    $network_address    = "192.168.100.0";
+    $interface          = "ether10";
 
     // Get DHCP Client
     $data = $router->add_ip(
         $ip,
-        $subnet,
+        $network_address,
         $interface
     );
 
