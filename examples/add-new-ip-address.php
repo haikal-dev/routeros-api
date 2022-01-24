@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Example for adding IP address to specific interface
+ */
+
 // include Router Management System class
 require_once "../routermgmt.php";
 

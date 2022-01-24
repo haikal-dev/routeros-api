@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Example for printing active dhcp clients
+ */
+
 // include Router Management System class
 require_once "../routermgmt.php";
 
