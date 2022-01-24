@@ -54,5 +54,11 @@ class RouterMgmt
         
         return $data;
     }
+
+    public function show_resource(){
+        $data = $this->api->comm("/system/resource/print");
+        
+        return $data;
+    }
     
 } 
