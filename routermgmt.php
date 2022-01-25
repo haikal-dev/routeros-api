@@ -60,5 +60,32 @@ class RouterMgmt
         
         return $data;
     }
+
+    public function show_wireless_clients(){
+        $row = [];
+        $data = $this->api->comm("/interface/wireless/registration-table/print");
+
+        foreach($data as $client){
+            if(isset($client['mac-address'])){
+                $dhcp = $this->get_dhcp_client_by_mac($client['mac-address']);
+                if(isset($dhcp[0]['mac-address']) && $dhcp[0]['mac-address'] == $client['mac-address']){
+                    $client['hostname'] = (isset($dhcp[0]['host-name'])) ? $dhcp[0]['host-name'] : "";
+                }
+            }
+
+            $row[] = $client;
+        }
+
+        return $row;
+    }
+
+    public function get_dhcp_client_by_mac($mac_address){
+        $this->api->write("/ip/dhcp-server/lease/print", false);
+        $this->api->write("?=mac-address=" . $mac_address);
+        
+        $data = $this->api->read();
+        
+        return $data;
+    }
     
 } 
