@@ -40,6 +40,11 @@ class RouterMgmt
         print_r($data);
     }
 
+    public function show_health(){
+        $data = $this->api->comm("/system/health/print");
+        return $data;
+    }
+
     public function show_dhcp_clients(){
         $data = $this->api->comm("/ip/dhcp-server/lease/print");
         return $data;
